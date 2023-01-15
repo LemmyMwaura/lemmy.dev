@@ -12,11 +12,12 @@
 html {
   font-family: "Roboto Mono", monospace;
   background-color: #282828;
-  color: #cbbe9c;;
+  color: #cbbe9c;
+  overflow-x: hidden;
   
   body {
     width: 100vw;
-    min-height: 100vh;
+    min-height: calc(100vh + 8rem);
     display:flex;
     align-items: center;
     flex-direction: column;

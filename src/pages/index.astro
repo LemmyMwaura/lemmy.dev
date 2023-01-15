@@ -1,14 +1,15 @@
 ---
+import Bio from '../components/Bio.astro';
 import Layout from '../layouts/Layout.astro';
 import Viewer from '../components/Viewer.astro';
 import PinnedItems from '../components/PinnedItems.astro';
 import { viewer, pinneditems } from '../lib/getProfile';
-// console.log(pinneditems)
 ---
 
 <Layout title="Portfolio | Lemmy Mwaura">
 	<main>
 		<Viewer name={viewer.login} avatar={viewer.avatarUrl}/>
+		<Bio></Bio>
 		<PinnedItems repos={pinneditems}/>
 	</main>
 </Layout>
@@ -16,11 +17,8 @@ import { viewer, pinneditems } from '../lib/getProfile';
 <style>
 	main {
 		margin-top: 3rem;
+		display: grid;
+		gap: 1.5rem;
 		width: 100%;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
 	}
 </style>

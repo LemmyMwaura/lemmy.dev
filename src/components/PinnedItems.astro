@@ -27,18 +27,18 @@ const { repos } = Astro.props as pinnedItems
 
 ---
 
-<div class="wrapper">
+<h2 class="title">Some Items I've Built</h2>
+<div class="wrapper-items">
   {repos.map((repo: pinnedItem) => 
     <Card repo={repo}/>
   )}
 </div>
 
 <style>
-  .wrapper {
+  .wrapper-items {
     display: grid;
     width: 100%;
 		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
-    margin-top: 2rem;
   }
 </style>
