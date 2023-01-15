@@ -1,6 +1,5 @@
 ---
 interface langs {
-  // TODO: improve typesafety
   edges: {
     node: {
       name: string
@@ -11,6 +10,7 @@ interface langs {
 interface repoDetails {
 	id: string,
   name: string,
+	description: string,
   forkCount: number,
   stargazerCount: number,
   url: string,
@@ -25,17 +25,34 @@ const { repo } = Astro.props;
 ---
 
 <div class="wrapper">
-		<span>{repo.name}</span>
-		<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
-		<span>{repo.forkCount}</span>
-		<span>{repo.stargazerCount}</span>
-		<span>{repo.languages.edges[0].node.name}</span>
+	<div class="title">{repo.name}</div>
+	<div class="desc">{repo.description}</div>
+	<div class="footer">
+		<span class="starts">{repo.stargazerCount}</span>
+		<span class="fork">{repo.forkCount}</span>
+		<span class="lang">{repo.languages.edges[0].node.name}</span>
+	</div>
 </div>
 
 <style>
 	.wrapper {
-		padding: 2rem;
+		padding: 1.5rem;
 		background-color: #212121;
 		border-radius: 0.3rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.title {
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		color: #4d9355;
+	}
+	.desc {
+		font-size: 1rem;
+	}
+	.footer {
+		display: flex;
+		gap: 0.5rem;
 	}
 </style>

@@ -2,7 +2,6 @@
 import Card from "./Card.astro"
 
 interface langs {
-  // TODO: improve typesafety
   edges: {
     node: {
       name: string
@@ -13,6 +12,7 @@ interface langs {
 interface pinnedItem {
   id: string,
   name: string,
+  description: string,
   forkCount: number,
   stargazerCount: number,
   url: string,
@@ -40,5 +40,9 @@ const { repos } = Astro.props as pinnedItems
     width: 100%;
 		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
+  }
+  .title {
+    font-weight: 500;
+    text-decoration: underline;
   }
 </style>

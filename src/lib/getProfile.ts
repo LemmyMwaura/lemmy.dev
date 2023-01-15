@@ -15,6 +15,7 @@ const query = `{
           ... on Repository {
             id
             name
+            description
             forkCount
             stargazerCount
             url
