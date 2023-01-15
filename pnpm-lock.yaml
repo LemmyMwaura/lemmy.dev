@@ -1,10 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/roboto-mono': ^4.5.8
   astro: ^1.9.0
   sass: ^1.57.1
 
 dependencies:
+  '@fontsource/roboto-mono': 4.5.8
   astro: 1.9.2_sass@1.57.1
 
 devDependencies:
@@ -380,6 +382,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/roboto-mono/4.5.8:
+    resolution: {integrity: sha512-AW44UkbQD0w1CT5mzDbsvhGZ6/bb0YmZzoELj6Sx8vcVEzcbYGUdt2Dtl5zqlOuYMWQFY1mniwWyVv+Bm/lVxw==}
+    dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
