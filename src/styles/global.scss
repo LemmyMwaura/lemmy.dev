@@ -1,5 +1,9 @@
 :root {
   --accent: 124, 58, 237;
+  --main-color: #282828;
+  --sec-color:#212121;
+  --accent-color:#e2b714;
+  --font-color:#cbbe9c;
   --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 }
 
@@ -10,14 +14,15 @@
 }
 
 html {
-  font-family: "Roboto Mono", monospace;
-  background-color: #282828;
-  color: #cbbe9c;
+  font-family: "Lexend Deca", sans-serif;
+  // font-family: "Roboto Mono", monospace;
+  background-color: var(--main-color);
+  color: var(--font-color);
   overflow-x: hidden;
   
   body {
     width: 100vw;
-    min-height: calc(100vh + 8rem);
+    min-height: calc(100vh + 12rem);
     display:flex;
     align-items: center;
     flex-direction: column;
