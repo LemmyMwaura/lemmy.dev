@@ -1,0 +1,44 @@
+---
+import Card from "./Card.astro"
+
+interface langs {
+  // TODO: improve typesafety
+  edges: {
+    node: {
+      name: string
+    }
+  }[]
+}
+
+interface pinnedItem {
+  id: string,
+  name: string,
+  forkCount: number,
+  stargazerCount: number,
+  url: string,
+  languages: langs,
+}
+
+interface pinnedItems {
+  repos: pinnedItem[]
+}
+
+const { repos } = Astro.props as pinnedItems
+
+---
+
+<div class="wrapper">
+  {repos.map((repo: pinnedItem) => 
+    <Card repo={repo}/>
+  )}
+</div>
+
+<style>
+  .wrapper {
+    display: grid;
+    width: 100%;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+    margin-top: 2rem;
+  }
+</style>
