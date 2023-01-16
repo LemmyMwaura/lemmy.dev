@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.14.0",
     "@fontsource/lexend-deca": "^4.5.13",
     "@fontsource/roboto-mono": "^4.5.8",
     "@octokit/graphql": "^5.0.4",
