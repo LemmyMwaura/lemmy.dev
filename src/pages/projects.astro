@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectItem from "../components/ProjectItem.astro";
+import { portfolio } from '../lib/projects';
+import type { projectProps } from "../models/project.model";
+---
+
+<Layout title="Projects | Lemmy Mwaura">
+  <section class="project">
+    {portfolio.map((proj: projectProps) => 
+      <ProjectItem proj={proj} />
+    )}
+  </section>
+</Layout>
+
+<style>
+  .project {
+    padding-top: 3rem;
+    display: grid;
+    gap: 1rem;
+  }
+</style>
