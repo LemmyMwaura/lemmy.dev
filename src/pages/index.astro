@@ -1,14 +1,14 @@
 ---
-import Bio from '../components/Bio.astro';
+import Bio from '../components/User/Bio.astro';
 import Layout from '../layouts/Layout.astro';
-import Viewer from '../components/Viewer.astro';
+import Viewer from '../components/User/Viewer.astro';
 import PinnedItems from '../components/PinnedItems.astro';
 import { viewer, pinneditems } from '../lib/getProfile';
 ---
 
 <Layout title="Portfolio | Lemmy Mwaura">
 	<main>
-		<Viewer name={viewer.login} avatar={viewer.avatarUrl}/>
+		<Viewer avatar={viewer.avatarUrl}/>
 		<Bio></Bio>
 		<PinnedItems repos={pinneditems}/>
 	</main>

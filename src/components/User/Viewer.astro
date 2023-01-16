@@ -1,14 +1,12 @@
 ---
   interface UserProps {
-    name: string,
     avatar: string,
   }
 
-  const { name, avatar } = Astro.props as UserProps
+  const { avatar } = Astro.props as UserProps
 ---
 <div class="wrapper">
   <img class="image" src={avatar} alt="profile avatar">
-  <!-- <span class="username">{name}</span> -->
 </div>
 
 <style>
