@@ -20,8 +20,11 @@ const { proj } = Astro.props
     ))}
   </div>
   <div class="links">
-    <a href={proj.liveLink} target="_blank">Live</a>
-    <a href={proj.githubLink} target="_blank">Github</a>
+    <a 
+      class={proj.liveLink && "link"}
+      href={proj.liveLink} target="_blank">{proj.liveLink && "Open"}
+    </a>
+    <a class="link" href={proj.githubLink} target="_blank">Github</a>
   </div>
 </div>
 
@@ -45,7 +48,11 @@ const { proj } = Astro.props
     display: flex;
     gap: 0.5rem;
   }
-  .links > a {
+  .links {
+    display: flex;
+    gap: 0.3rem;
+  }
+  .link {
     padding: 5px;
     border-radius: 0.2rem;
     background-color:  #282828;
