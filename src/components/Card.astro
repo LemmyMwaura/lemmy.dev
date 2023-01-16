@@ -22,15 +22,25 @@ export interface Props {
 }
 
 const { repo } = Astro.props;
+const forks = repo.forkCount;
+const stars = repo.stargazerCount;
+const lang = repo.languages.edges[0].node.name;
+
 ---
 
 <div class="wrapper">
 	<div class="title">{repo.name}</div>
 	<div class="desc">{repo.description}</div>
 	<div class="footer">
-		<span class="starts">{repo.stargazerCount}</span>
-		<span class="fork">{repo.forkCount}</span>
-		<span class="lang">{repo.languages.edges[0].node.name}</span>
+		<span class="stars">
+			<!-- <Icon name="mdi:account"/> -->
+			<span>{stars == 0 ? stars : ""}</span>
+		</span>
+		<span class="fork">
+			<!-- <Icon name="mdi:account"/> -->
+			<span>{forks == 0 ? forks : ""}</span>
+		</span>
+		<span class="lang">{lang}</span>
 	</div>
 </div>
 
@@ -54,5 +64,9 @@ const { repo } = Astro.props;
 	.footer {
 		display: flex;
 		gap: 0.5rem;
+	}
+	.stars, .fork {
+		display:flex;
+		gap:0.4rem;
 	}
 </style>
