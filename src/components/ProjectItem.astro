@@ -9,16 +9,41 @@ const { proj } = Astro.props
 ---
 
 <div class="wrapper-project">
-  <span>{proj.name}</span>
+  <div class="name">{proj.name}</div>
+  <div class="desc">{proj.description}</div>
+  <div class="stats-wrapper">
+    {proj.stats.map((stat) => (
+      <span class="stat"> - {stat}</span>
+    ))}
+  </div>
+  <div class="links">
+    <a href={proj.liveLink} target="_blank">Live</a>
+    <a href={proj.githubLink} target="_blank">Github</a>
+  </div>
 </div>
 
 <style>
   .wrapper-project {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
     padding: 1rem;
     background-color: #212121;
     border-radius: 0.3rem;
+  }
+  .name {
+    color:#4d9355;
+  }
+  .stats-wrapper {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .links > a {
+    padding: 5px;
+    border-radius: 0.2rem;
+    background-color:  #282828;
+    text-decoration: none;
+    color: #e2b714;
   }
 </style>
