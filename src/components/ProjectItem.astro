@@ -1,0 +1,24 @@
+---
+import type { projectProps } from "../models/project.model";
+
+interface Props {
+  proj : projectProps
+}
+
+const { proj } = Astro.props
+---
+
+<div class="wrapper-project">
+  <span>{proj.name}</span>
+</div>
+
+<style>
+  .wrapper-project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #212121;
+    border-radius: 0.3rem;
+  }
+</style>
