@@ -1,35 +1,18 @@
 ---
+import type { repoDetails } from "../models/repo.model";
 import Card from "./Card.astro"
 
-interface langs {
-  edges: {
-    node: {
-      name: string
-    }
-  }[]
+interface DetailsProps {
+  repos: repoDetails[]
 }
 
-interface pinnedItem {
-  id: string,
-  name: string,
-  description: string,
-  forkCount: number,
-  stargazerCount: number,
-  url: string,
-  languages: langs,
-}
-
-interface pinnedItems {
-  repos: pinnedItem[]
-}
-
-const { repos } = Astro.props as pinnedItems
+const { repos } = Astro.props as DetailsProps
 
 ---
 
 <h2 class="title">Some Items I've Built</h2>
 <div class="wrapper-items">
-  {repos.map((repo: pinnedItem) => 
+  {repos.map((repo: repoDetails) => 
     <Card repo={repo}/>
   )}
 </div>

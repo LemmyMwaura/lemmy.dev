@@ -1,27 +1,11 @@
 ---
-interface langs {
-  edges: {
-    node: {
-      name: string
-    }
-  }[]
-}
+import type { repoDetails } from "../models/repo.model";
 
-interface repoDetails {
-	id: string,
-  name: string,
-	description: string,
-  forkCount: number,
-  stargazerCount: number,
-  url: string,
-  languages: langs,
-}
-
-export interface Props {
+interface DetailsProps {
 	repo: repoDetails
 }
 
-const { repo } = Astro.props;
+const { repo } = Astro.props as DetailsProps;
 const forks = repo.forkCount;
 const stars = repo.stargazerCount;
 const lang = repo.languages.edges[0].node.name;

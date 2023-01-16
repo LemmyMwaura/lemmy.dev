@@ -1,0 +1,33 @@
+---
+interface Props {
+  faq: {
+    question: string
+    answer: string
+  }
+}
+
+const { faq } = Astro.props
+---
+
+<div class="wrapper-faq">
+  <div class="qstn">{faq.question}</div>
+  <div class="ans">{faq.answer}</div>
+</div>
+
+<style>
+  .wrapper-faq{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #212121;
+    border-radius: 0.3rem;
+  }
+  .qstn {
+    font-size: 1.5rem;
+    color: #4d9355;
+  }
+  .ans {
+    font-size: 1.4rem;
+  }
+</style>

@@ -1,7 +1,22 @@
 ---
+import FAQ from "../components/FAQ.astro";
 import Layout from "../layouts/Layout.astro";
+import { FAQs } from "../lib/faq";
 ---
 
-<Layout title="FAQ | Lemmy Mwaura">
-  <h4>Faq</h4>
+<Layout title="FAQ | LemmyMwaura">
+  <section class="section-wrapper">
+    {FAQs.map((faq) => (
+      <FAQ faq={faq}/>
+    ))}
+  </section>
 </Layout>
+
+<style>
+  .section-wrapper {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>
