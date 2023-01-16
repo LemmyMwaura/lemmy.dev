@@ -10,7 +10,10 @@ const { proj } = Astro.props
 
 <div class="wrapper-project">
   <div class="name">{proj.name}</div>
-  <div class="desc">{proj.description}</div>
+  <div class="desc-wrapper">
+    <span class="desc">{proj.description}</span>
+    <span class="cat">{proj.category}</span>
+  </div>
   <div class="stats-wrapper">
     {proj.stats.map((stat) => (
       <span class="stat"> - {stat}</span>
@@ -34,8 +37,11 @@ const { proj } = Astro.props
   .name {
     color:#4d9355;
   }
+  .cat{
+    color: #e2b714;
+  }
   .stats-wrapper {
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     display: flex;
     gap: 0.5rem;
   }
