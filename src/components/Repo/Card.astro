@@ -18,11 +18,11 @@ const lang = repo.languages.edges[0].node.name;
 	<div class="desc">{repo.description}</div>
 	<div class="footer">
 		<span class="footer__first">
-			<span class="stars">
+			<span class={stars !== 0 && "stars" as any}>
 				<span>{stars !== 0 && "stars"}</span>
 				<span>{stars !== 0 && getUpdatedCount(stars)}</span>
 			</span>
-			<span class="fork">
+			<span class={forks !== 0 && "fork" as any}>
 				<span>{forks !== 0 && "forks"}</span>
 				<span>{forks !== 0 && getUpdatedCount(forks)}</span>
 			</span>
@@ -64,9 +64,16 @@ const lang = repo.languages.edges[0].node.name;
 		gap: 0.3rem;
 		width: 100%;
 		color: #e2b714;
+
+		padding: 5px;
+    border-radius: 0.2rem;
+    background-color:  #282828;
 	}
 	.lang{
 		font-size: 0.8rem;
 		color: #e2b714;
+		padding: 5px;
+    border-radius: 0.2rem;
+    background-color:  #282828;
 	}
 </style>
