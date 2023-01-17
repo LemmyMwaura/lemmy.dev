@@ -1,5 +1,6 @@
 ---
 import type { repoDetails } from "../../models/repo.model";
+import { getUpdatedCount } from "../../lib/helpers";
 
 interface DetailsProps {
 	repo: repoDetails
@@ -16,13 +17,15 @@ const lang = repo.languages.edges[0].node.name;
 	<div class="title">{repo.name}</div>
 	<div class="desc">{repo.description}</div>
 	<div class="footer">
-		<span class="stars">
-			<!-- <Icon name="mdi:account"/> -->
-			<span>{stars == 0 ? stars : ""}</span>
-		</span>
-		<span class="fork">
-			<!-- <Icon name="mdi:account"/> -->
-			<span>{forks == 0 ? forks : ""}</span>
+		<span class="footer__first">
+			<span class="stars">
+				<span>{stars !== 0 && "stars"}</span>
+				<span>{stars !== 0 && getUpdatedCount(stars)}</span>
+			</span>
+			<span class="fork">
+				<span>{forks !== 0 && "forks"}</span>
+				<span>{forks !== 0 && getUpdatedCount(forks)}</span>
+			</span>
 		</span>
 		<span class="lang">{lang}</span>
 	</div>
@@ -38,7 +41,7 @@ const lang = repo.languages.edges[0].node.name;
 		gap: 0.5rem;
 	}
 	.title {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		text-transform: capitalize;
 		color: #4d9355;
 	}
@@ -47,10 +50,23 @@ const lang = repo.languages.edges[0].node.name;
 	}
 	.footer {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
+		justify-content: space-between;
+	}
+	.footer__first {
+		display: flex;
+		gap:1.5rem;
 	}
 	.stars, .fork {
+		font-size: 0.9rem;
 		display:flex;
-		gap:0.4rem;
+		gap: 0.3rem;
+		width: 100%;
+		color: #e2b714;
+	}
+	.lang{
+		font-size: 0.8rem;
+		color: #e2b714;
 	}
 </style>

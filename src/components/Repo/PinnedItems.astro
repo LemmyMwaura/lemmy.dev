@@ -10,7 +10,7 @@ const { repos } = Astro.props as DetailsProps
 
 ---
 
-<h2 class="title">Some Items I've Built</h2>
+<h3 class="title">Some Items I've Built</h3>
 <div class="wrapper-items">
   {repos.map((repo: repoDetails) => 
     <Card repo={repo}/>
