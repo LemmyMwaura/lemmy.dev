@@ -1,35 +1,66 @@
 :root {
   --accent: 124, 58, 237;
   --main-color: #282828;
-  --sec-color:#212121;
-  --accent-color:#e2b714;
-  --font-color:#cbbe9c;
-  --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+  --sec-color: #212121;
+  --accent-color: #e2b714;
+  --font-color: #cbbe9c;
 }
 
-*,::after,::before {
+*,
+::after,
+::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Lexend Deca", sans-serif;
+  font-family: 'Lexend Deca', sans-serif;
   // font-family: "Roboto Mono", monospace;
   background-color: var(--main-color);
   color: var(--font-color);
   overflow-x: hidden;
-  
+
   body {
     width: 100vw;
     padding: 3rem 0;
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
 
     code {
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-        Bitstream Vera Sans Mono, Courier New, monospace;
+      font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     }
+
+    // safari & chrome
+    &::-webkit-scrollbar {
+      width: 0.6em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #212121;
+      // margin-block: 1em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: hsl(43, 31%, 70%);
+
+      &:hover {
+        background: hsl(44, 31%, 42%);
+      }
+
+      // &:hover {
+      //   background: hsl(44, 31%, 65%);
+      // }
+    }
+  }
+}
+
+// firefox
+@supports (scrollbar-color: #cabd9b #212121) {
+  * {
+    scrollbar-color: #cabd9b #212121;
+    scrollbar-width: thin;
   }
 }
