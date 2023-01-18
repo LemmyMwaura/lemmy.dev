@@ -1,7 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+// import Blog from "../components/Blog/Blog.astro";
+// const posts = await Astro.glob('../mdx/*.md')
 ---
 
 <Layout title="Blog | Lemmy Mwaura">
-  <h4>Blog</h4>
+  <!-- blogs -->
+  <section class="blogs">
+    <!-- {posts && posts.map(post => (
+      <div class="container">
+        <Blog post={post}/>
+      </div>
+    ))} -->
+  </section>
+  <div>Blogs will be added</div>
 </Layout>
+
+<style>
+  .blogs {
+    padding-top: 3rem;
+  }
+</style>
