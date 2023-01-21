@@ -1,0 +1,30 @@
+---
+interface Props {
+  gap: string,
+  cursor: string
+}
+
+const { gap, cursor } = Astro.props;
+---
+
+<div class={`item-wrapper`}>
+  <slot/>
+</div>
+
+<style define:vars={{gap, cursor}}>
+  .item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: var(--cursor);
+    padding: 1rem;
+    background-color: #212121;
+    border: 4px solid #212121;
+    border-radius: 0.3rem;
+    transition: border 200ms ease;
+  }
+
+  .item-wrapper:hover {
+    border: 4px solid #cbbe9c;
+  }
+</style>

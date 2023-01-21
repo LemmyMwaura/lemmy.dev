@@ -1,10 +1,17 @@
 ---
+import ItemLayout from "../../layouts/ItemLayout.astro";
+
+interface Props {
+  post: any
+}
+
 const { post } = Astro.props
 ---
 
 <section>
-  <div>
+  <ItemLayout gap="0.3rem" cursor="pointer">
     <h3>{post.frontmatter.title}</h3>
     <p>{post.frontmatter.excerpt}</p>
-  </div>
+    <p>{post.frontmatter.date}</p>
+  </ItemLayout>
 </section>

@@ -1,4 +1,6 @@
 ---
+import ItemLayout from '../../layouts/ItemLayout.astro';
+
 interface Props {
   faq: {
     question: string
@@ -9,20 +11,12 @@ interface Props {
 const { faq } = Astro.props
 ---
 
-<div class="wrapper-faq">
+<ItemLayout gap="0.3rem" cursor="normal">
   <div class="qstn">{faq.question}</div>
   <div class="ans">{faq.answer}</div>
-</div>
+</ItemLayout>
 
 <style>
-  .wrapper-faq{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    background-color: #212121;
-    border-radius: 0.3rem;
-  }
   .qstn {
     font-size: 1.2rem;
     color: #4d9355;

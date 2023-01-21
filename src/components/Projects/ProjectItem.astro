@@ -1,4 +1,5 @@
 ---
+import ItemLayout from "../../layouts/ItemLayout.astro";
 import type { projectProps } from "../../models/project.model";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 const { proj } = Astro.props
 ---
 
-<div class="wrapper-project">
+<ItemLayout gap="0.8rem" cursor="normal">
   <div class="name">{proj.name}</div>
   <div class="desc-wrapper">
     <span class="desc">{proj.description}</span>
@@ -26,17 +27,9 @@ const { proj } = Astro.props
     </a>
     <a class="link" href={proj.githubLink} target="_blank">Github</a>
   </div>
-</div>
+</ItemLayout>
 
 <style>
-  .wrapper-project {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 1rem;
-    background-color: #212121;
-    border-radius: 0.3rem;
-  }
   .name {
     color:#4d9355;
   }
