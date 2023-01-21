@@ -66,7 +66,7 @@ const portfolio = [
     description: 'Sudoku solver implemeneted using a Backtracking algorithm.',
     status: 'active',
     category: 'Personal Project',
-    liveLink: 'https://sudoku-solver-bylemmymwaura.netlify.app/',
+    liveLink: 'https://sudoku-gg.netlify.app/',
     githubLink: 'https://github.com/LemmyMwaura/Sudoku-Solver-Visualizer',
     stats: ['React', 'Vite'],
   },
