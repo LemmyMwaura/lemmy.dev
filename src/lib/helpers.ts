@@ -5,4 +5,8 @@ const getUpdatedCount = (num:number) : string | number =>  {
   return `${newNum}k`
 }
 
-export { getUpdatedCount }
+const modifyDate = (date: Date): string => {
+  return new Date(date).toLocaleDateString()
+}
+
+export { getUpdatedCount, modifyDate }
