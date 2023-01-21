@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.14.0",
+    "@astrojs/sitemap": "^1.0.0",
     "@fontsource/lexend-deca": "^4.5.13",
     "@fontsource/roboto-mono": "^4.5.8",
     "astro": "^1.9.0",
