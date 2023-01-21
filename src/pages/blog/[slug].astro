@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { modifyDate } from "../../lib/helpers";
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../mdx/*.{mdx,md}');
+  return posts.map(post => ({
+    params: {
+      slug: post.frontmatter.slug
+    },
+    props: {
+      post
+    }
+  }))
+}
+
+const { Content, frontmatter } = Astro.props.post
+---
+
+<Layout title={frontmatter.title}>
+  <Content/>
+  <div class="footer">
+    <p class="author">Written by 
+      <span class="highlight">{frontmatter.author}</span> on 
+      <span class="highlight">{modifyDate(frontmatter.date)}</span></p>
+  </div>
+</Layout>
+
+<style>
+  .footer {
+    display: grid;
+    place-content: center;
+  }
+  .highlight {
+    color: #e2b714;
+  }
+</style>

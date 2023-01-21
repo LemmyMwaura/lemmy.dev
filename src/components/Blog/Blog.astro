@@ -1,5 +1,6 @@
 ---
 import ItemLayout from "../../layouts/ItemLayout.astro";
+import { modifyDate } from "../../lib/helpers";
 
 interface Props {
   post: any
@@ -9,9 +10,29 @@ const { post } = Astro.props
 ---
 
 <section>
-  <ItemLayout gap="0.3rem" cursor="pointer">
-    <h3>{post.frontmatter.title}</h3>
-    <p>{post.frontmatter.excerpt}</p>
-    <p>{post.frontmatter.date}</p>
+  <ItemLayout gap="0.8rem" cursor="pointer">
+    <div class="post">
+      <h3>{post.frontmatter.title}</h3>
+      <p>{post.frontmatter.excerpt}</p>
+      <p>{modifyDate(post.frontmatter.date)}</p>
+      <div>
+        <a href={`/blog/${post.frontmatter.slug}`} class="link">Read More</a>
+      </div>
+    </div>
   </ItemLayout>
 </section>
+
+<style>
+  .post {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-rows:auto;
+  }
+  .link {
+    padding: 5px;
+    border-radius: 0.2rem;
+    background-color:  #282828;
+    text-decoration: none;
+    color: #e2b714;
+  }
+</style>
