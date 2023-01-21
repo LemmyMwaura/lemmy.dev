@@ -22,16 +22,32 @@ const { Content, frontmatter } = Astro.props.post
   <div class="footer">
     <p class="author">Written by 
       <span class="highlight">{frontmatter.author}</span> on 
-      <span class="highlight">{modifyDate(frontmatter.date)}</span></p>
+      <span class="highlight">{modifyDate(frontmatter.date)}</span>
+    </p>
+    <div class="link-wrapper">
+      <a href="/blog" class="link">Take me Back</a>
+    </div>
   </div>
 </Layout>
 
 <style>
   .footer {
     display: grid;
+    gap: 0.8rem;
     place-content: center;
   }
   .highlight {
     color: #e2b714;
+  }
+  .link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .link {
+    padding: 5px;
+    border-radius: 0.2rem;
+    background-color:#212121;
+    text-decoration: none;
+    color: #fb4934;
   }
 </style>

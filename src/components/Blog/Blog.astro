@@ -14,9 +14,9 @@ const { post } = Astro.props
     <div class="post">
       <h3>{post.frontmatter.title}</h3>
       <p>{post.frontmatter.excerpt}</p>
-      <p>{modifyDate(post.frontmatter.date)}</p>
-      <div>
+      <div class="post-footer">
         <a href={`/blog/${post.frontmatter.slug}`} class="link">Read More</a>
+        <p>{modifyDate(post.frontmatter.date)}</p>
       </div>
     </div>
   </ItemLayout>
@@ -27,6 +27,11 @@ const { post } = Astro.props
     display: grid;
     gap: 0.8rem;
     grid-template-rows:auto;
+  }
+  .post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .link {
     padding: 5px;
