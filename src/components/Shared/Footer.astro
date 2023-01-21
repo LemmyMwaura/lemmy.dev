@@ -1,3 +1,46 @@
-<footer>
+<footer class="footer">
+  <a class="link" href="https://github.com/LemmyMwaura" target="_blank">Powered by Astro</a>
+  <span>copyright &copy; {new Date().getFullYear()}</span>
   
+  <div class="footer--links">
+    <a href="" class="link">
+      <i class='bx bx-rss'></i>
+      <span>rss</span>
+    </a>
+
+    <a href="" class="link" target="_blank">
+      <i class='bx bx-sitemap'></i>
+      <span>sitemap</span>
+    </a>
+  </div>
 </footer>
+
+<style>
+  .footer {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.5rem 1.2rem;
+    gap: 1.5rem;
+    background-color: #212121;
+    border-radius: 0.3rem;
+  }
+  .footer--links {
+    display: flex;
+    gap: 1rem;
+  }
+  .link {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    text-decoration: none;
+    color: #cbbe9c;
+  }
+  .link > * {
+    font-size: 1.1rem;
+  }
+  .link:hover {
+    color: #e2b714;
+  }
+</style>
