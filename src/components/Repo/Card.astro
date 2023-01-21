@@ -19,11 +19,11 @@ const lang = repo.languages.edges[0].node.name;
 	<div class="footer">
 		<span class="footer__first">
 			<span class={stars !== 0 && "stars" as any}>
-				<span>{stars !== 0 && "stars"}</span>
+				<span>{stars !== 0 && <i class='bx bx-star'></i>}</span>
 				<span>{stars !== 0 && getUpdatedCount(stars)}</span>
 			</span>
 			<span class={forks !== 0 && "fork" as any}>
-				<span>{forks !== 0 && "forks"}</span>
+				<span>{forks !== 0 && <i class='bx bx-git-repo-forked'></i>}</span>
 				<span>{forks !== 0 && getUpdatedCount(forks)}</span>
 			</span>
 		</span>
@@ -61,7 +61,7 @@ const lang = repo.languages.edges[0].node.name;
 	.stars, .fork {
 		font-size: 0.9rem;
 		display:flex;
-		gap: 0.3rem;
+		gap: 0.4rem;
 		width: 100%;
 		color: #e2b714;
 
