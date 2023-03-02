@@ -7,7 +7,7 @@ ___
 ### Introduction
 A simple, basic portfolio and personal blog site. Built with astro. Design was inspired by [Gruvbox's dark theme](https://github.com/morhetz/gruvbox).
 
-Only my own aesthetic was considered in the making of this, so it's meant to be eye-cathing.
+Only my own aesthetic was considered in the making of this, so it's not meant to be eye-cathing.
 
 ---
 ___
